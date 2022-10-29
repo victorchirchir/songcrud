@@ -16,8 +16,9 @@ Including another URLconf
 from unicodedata import name
 from django.contrib import admin
 from django.urls import path,include
-from .views import index
+from .views import index,HomePageView,Template
 
 urlpatterns = [
+    path('',HomePageView.as_view(),name='home'),
     path('home/',index,name='index')
 ]
